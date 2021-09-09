@@ -10,12 +10,14 @@ public class SnackAndLadder {
         final int Ladder = 2;
         // variable
         int pos = 0;
+        int prevPos;
         System.out.println("Snack and ladder program");
         System.out.println("Player is at start position");
-        while (pos <= 100) {
+        while (pos!=100) {
             int die = (int) Math.floor(Math.random() * 6) + 1;
             System.out.println("Number the player give" + die);
             int die1 = (int) Math.floor(Math.random() * 3);
+            prevPos = pos;
             switch (die1) {
                 case NO_PLAY:
                     System.out.println("Player does not play");
@@ -34,11 +36,17 @@ public class SnackAndLadder {
                     break;
                 case Ladder:
                     System.out.println("Player get the ladder");
+                    //       prevPos = pos;
                     pos += die;
-                    System.out.println("Player at position" + pos);
+                    if (pos > 100) {
+                        pos = prevPos;
+                        System.out.println("Player at position" + pos);
+                    } else {
+                        System.out.println("Player at position" + pos);
+                    }
                     break;
             }
-
         }
     }
+
 }
