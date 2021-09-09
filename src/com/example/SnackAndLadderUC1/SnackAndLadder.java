@@ -7,6 +7,8 @@ public class SnackAndLadder {
       final int pos=0;
        System.out.println("Snack and ladder program");
        System.out.println("Player is at start position");
+       int die = (int) Math.floor(Math.random() *6 ) +1;
+       System.out.println("Number the player give"+die);
 
    }
 }
